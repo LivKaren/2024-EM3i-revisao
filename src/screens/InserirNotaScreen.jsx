@@ -1,12 +1,16 @@
-import { Paragraph, Surface } from "react-native-paper";
-
+import { useState } from "react";
+import { Paragraph, Surface, TextInput } from "react-native-paper";
 
 export default function InserirNotaScreen() {
-    return(
-        <Surface>
-            <View>
-                <Paragraph>Insira sua nota</Paragraph>
-            </View>
-        </Surface>
-    )
+  const [nota, setNota] = useState(0);
+
+  return (
+    <Surface>
+      <View>
+        <Paragraph>Insira sua nota</Paragraph>
+        <TextInput value={nota} onChangeText={(text) => setNota(text)} />
+      </View>
+    </Surface>
+  );
 }
+
